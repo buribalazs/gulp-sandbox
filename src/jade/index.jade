@@ -1,8 +1,22 @@
 doctype html
-html
+html.sans-serif-light
     include includes/head.jade
     body
-        h1 TESZT
-        h1 árvíztűrő tükörfúrógép
-
-
+        .bg-index
+            .content-wrap
+                .text-center
+                    img(src='img/logo-lg.png').se-logo-main
+                .index-nav-wrap.serif-heavy.uppercase.text-center
+                    .index-destination-block-container
+                        .index-destination-block-content
+                            .index-destination-row1 semmi
+                            .index-destination-row2 extra
+                            .index-destination-row3 bartók b. út.
+                            img(src='img/arrow-sketch-left.png').index-left-arrow
+                    .index-destination-block-container
+                        .index-destination-block-content
+                            img(src='img/arrow-sketch-right.png').index-right-arrow
+                            .index-destination-row1 semmi
+                            .index-destination-row2 extra
+                            .index-destination-row3b lajos utca
+                    .clearfix

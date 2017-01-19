@@ -1,7 +1,7 @@
 @import "partials/_variables";
 @import "partials/_defaults";
+@import "partials/_layout";
+@import "partials/_backgrounds";
 @import "partials/_fonts";
 
-h1 {
-  @extend .sans-serif-heavy;
-}
+@import "partials/specifics/_index-page.scss";

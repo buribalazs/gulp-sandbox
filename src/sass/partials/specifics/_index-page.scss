@@ -1,0 +1,128 @@
+@import '../_layout';
+@import '../_backgrounds';
+@import '../_variables';
+
+$logo-main-size: 45%;
+$logo-main-size-portrait: 65%;
+
+$destination-block-border: 3px solid white;
+
+.bg-index {
+  @extend .full-bg;
+  background-image: (url("../img/bg/se-index-bg.jpg"));
+}
+
+.se-logo-main{
+  width: $logo-main-size;
+}
+
+.index-nav-wrap {
+  @extend .content-wrap;
+  padding:3rem 0;
+  max-width: $logo-main-size * 1.2;
+  @media screen and (orientation: portrait) {
+    padding:7rem 0;
+  }
+}
+
+
+.index-destination-block-container {
+  width: 50%;
+  float:left;
+}
+
+.index-destination-block-content {
+  position: relative;
+  margin: 0 0.7rem;
+  padding : 0.7rem 0;
+  background: url("../img/bg/grunge-alpha-texture.png");
+  background-size: 100%;
+  background-position: 0 0;
+  border-top: $destination-block-border;
+  border-bottom: $destination-block-border;
+}
+
+.index-left-arrow{
+  width: 50%;
+  position: absolute;
+  left: 10%;
+  top:95%
+}
+
+.index-right-arrow{
+  width: 50%;
+  position: absolute;
+  left: 43%;
+  bottom:103%
+}
+
+.index-destination-row1 {
+  font-size: 4vw;
+  line-height: 5vw;
+}
+
+.index-destination-row2 {
+  font-size: 4.1vw;
+  line-height: 4vw;
+}
+
+.index-destination-row3 {
+  font-size: 2vw;
+  line-height: 3vw;
+}
+
+.index-destination-row3b {
+  font-size: 2.3vw;
+}
+
+@media screen and (min-width: $max-content-width) {
+  .index-destination-row1 {
+    font-size: 2.8rem;
+    line-height: 3rem;
+  }
+
+  .index-destination-row2 {
+    font-size: 2.8rem;
+    line-height: 3.2rem;
+  }
+
+  .index-destination-row3 {
+    font-size: 1.35rem;
+    line-height: 2rem;
+  }
+
+  .index-destination-row3b {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+}
+
+@media screen and (orientation: portrait) {
+  .se-logo-main{
+    width: $logo-main-size-portrait;
+  }
+
+  .index-nav-wrap {
+    max-width: $logo-main-size-portrait * 1.2;
+  }
+
+  .index-destination-row1 {
+    font-size: 7vw;
+    line-height: 7vw;
+  }
+
+  .index-destination-row2 {
+    font-size: 7.2vw;
+    line-height: 7.2vw;
+  }
+
+  .index-destination-row3 {
+    font-size: 3.2vw;
+    line-height: 3.2vw;
+  }
+
+  .index-destination-row3b {
+    font-size: 4vw;
+    line-height: 4vw;
+  }
+}

@@ -1,0 +1,12 @@
+@import '_variables';
+
+.content-wrap {
+  max-width: $max-content-width;
+  margin: 0 auto;
+  padding: 3rem;
+}
+
+.text-center {
+  text-align: center;
+}
+

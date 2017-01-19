@@ -1,0 +1,10 @@
+.bg {
+  overflow: auto;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.full-bg {
+  @extend .bg;
+  min-height: 100vh;
+}
