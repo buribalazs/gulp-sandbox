@@ -1,0 +1,20 @@
+$serif-font: 'Noto Serif';
+$sans-serif-font: 'Asap';
+$light-weight: 400;
+$heavy-weight: 700;
+
+.serif-heavy {
+  font-family: $serif-font;
+  font-weight: $heavy-weight;
+}
+
+.sans-serif-light {
+  font-family: $sans-serif-font;
+  font-weight: $light-weight;
+}
+
+.sans-serif-heavy {
+  font-family: $sans-serif-font;
+  font-weight: $heavy-weight;
+}
+

@@ -1,5 +1,7 @@
 @import "partials/_variables";
+@import "partials/_defaults";
+@import "partials/_fonts";
 
-.header {
-  color: $header-color;
+h1 {
+  @extend .sans-serif-heavy;
 }
