@@ -1,0 +1,30 @@
+@mixin animation($name, $duration){
+  -webkit-animation: $name $duration; 
+  -moz-animation: $name $duration; 
+  -o-animation: $name $duration;
+  animation: $name $duration;
+}
+
+@mixin keyframes($animationName) {
+  @-webkit-keyframes #{$animationName} {
+    @content;
+  }
+  @-moz-keyframes #{$animationName} {
+    @content;
+  }
+  @-o-keyframes #{$animationName} {
+    @content;
+  }
+  @keyframes #{$animationName} {
+    @content;
+  }
+}
+
+.fadein{
+  @include animation(fadein,0.4s);
+}
+
+@include keyframes(fadein){
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}

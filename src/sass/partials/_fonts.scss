@@ -1,3 +1,6 @@
+@import "_mixins";
+@import "_variables";
+
 $serif-font: 'Noto Serif';
 $sans-serif-font: 'Asap';
 $light-weight: 400;
@@ -16,5 +19,8 @@ $heavy-weight: 700;
 .sans-serif-heavy {
   font-family: $sans-serif-font;
   font-weight: $heavy-weight;
+  &.wide {
+    @include scale($font-wide-scale,1);
+  }
 }
 

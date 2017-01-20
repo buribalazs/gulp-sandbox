@@ -1,0 +1,24 @@
+@mixin rotate($deg) {
+  -ms-transform: rotate($deg);
+  -webkit-transform: rotate($deg);
+  transform: rotate($deg);
+}
+
+@mixin scale($x, $y) {
+  -webkit-transform: scale($x, $y);
+  -moz-transform: scale($x, $y);
+  -ms-transform: scale($x, $y);
+  -o-transform: scale($x, $y);
+  transform: scale($x, $y);
+}
+
+@mixin box-shadow($x, $y, $blur, $spread, $r, $g, $b, $alpha) {
+  -webkit-box-shadow: $x $y $blur $spread rgba($r, $g, $b, $alpha);
+  -moz-box-shadow: $x $y $blur $spread rgba($r, $g, $b, $alpha);
+  box-shadow: $x $y $blur $spread rgba($r, $g, $b, $alpha);
+}
+
+
+@mixin text-shadow($x, $y, $blur, $r, $g, $b, $alpha) {
+  text-shadow: $x $y $blur rgba($r, $g, $b, $alpha);
+}

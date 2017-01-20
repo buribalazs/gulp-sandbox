@@ -1,6 +1,14 @@
 @import '_variables';
 @import '_fonts';
 
+.preload * {
+  -webkit-animation: none !important;
+  -moz-animation: none !important;
+  -o-animation: none !important;
+  animation: none !important;
+  opacity: 0;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -11,7 +19,7 @@ html {
 }
 
 body {
-  background-color: $page-background-color;
+  background-color: $color-page-background;
   margin: 0;
   padding: 0;
 }

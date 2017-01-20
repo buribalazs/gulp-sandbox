@@ -40,11 +40,18 @@ gulp.task('jslib', function () {
     gulp.src(libs).pipe(gulp.dest('dist/js/'));
 });
 
+gulp.task('js-own', function () {
+    gulp.src('src/js/**/*.js')
+        .pipe(gulp.dest('dist/js/'))
+        .pipe(livereload());
+});
 
 
-gulp.task('default', ['jslib', 'templates', 'sass', 'images'], function () {
+
+gulp.task('default', ['jslib', 'templates', 'sass', 'js-own', 'images'], function () {
     livereload.listen();
     gulp.watch('jade/**/*.jade', {cwd: './src'}, ['templates']);
     gulp.watch('sass/**/*.scss', {cwd: './src'}, ['sass']);
+    gulp.watch('js/**/*.js', {cwd: './src'}, ['js-own']);
     gulp.watch('img/**/*.*', {cwd: './src'}, ['images']);
 });

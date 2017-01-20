@@ -1,6 +1,8 @@
 @import '../_layout';
 @import '../_backgrounds';
 @import '../_variables';
+@import '../_mixins';
+@import '../_animations';
 
 $logo-main-size: 45%;
 $logo-main-size-portrait: 65%;
@@ -12,48 +14,49 @@ $destination-block-border: 3px solid white;
   background-image: (url("../img/bg/se-index-bg.jpg"));
 }
 
-.se-logo-main{
+.se-logo-main {
   width: $logo-main-size;
 }
 
 .index-nav-wrap {
   @extend .content-wrap;
-  padding:3rem 0;
-  max-width: $logo-main-size * 1.2;
-  @media screen and (orientation: portrait) {
-    padding:7rem 0;
+  padding: 2rem 0;
+  @media screen and (min-width: $max-content-width) {
+    padding: 4rem 0 5rem 0;
   }
+  max-width: $logo-main-size * 1.2;
 }
-
 
 .index-destination-block-container {
   width: 50%;
-  float:left;
+  float: left;
 }
 
 .index-destination-block-content {
   position: relative;
   margin: 0 0.7rem;
-  padding : 0.7rem 0;
+  padding: 0.7rem 0;
   background: url("../img/bg/grunge-alpha-texture.png");
   background-size: 100%;
-  background-position: 0 0;
   border-top: $destination-block-border;
   border-bottom: $destination-block-border;
+  &.offset {
+    background-position: 0 -50px;
+  }
 }
 
-.index-left-arrow{
+.index-left-arrow {
   width: 50%;
   position: absolute;
   left: -10%;
-  top:95%
+  top: 95%
 }
 
-.index-right-arrow{
+.index-right-arrow {
   width: 50%;
   position: absolute;
   left: 43%;
-  bottom:103%
+  bottom: 103%
 }
 
 .index-destination-row1 {
@@ -73,6 +76,18 @@ $destination-block-border: 3px solid white;
 
 .index-destination-row3b {
   font-size: 2.3vw;
+}
+
+.index-callword {
+  @include rotate(-7deg);
+  position: relative;
+  white-space: nowrap;
+  color: $color-index-highlight;
+  font-size: 3.4vw;
+  line-height: 6.3vw;
+  &.offset {
+    left: -1.5vw;
+  }
 }
 
 @media screen and (min-width: $max-content-width) {
@@ -95,15 +110,23 @@ $destination-block-border: 3px solid white;
     font-size: 1.5rem;
     line-height: 2rem;
   }
+
+  .index-callword {
+    font-size: 2.1rem;
+    line-height: 3.4rem;
+    &.offset {
+      left: -1.2rem;
+    }
+  }
 }
 
 @media screen and (orientation: portrait) {
-  .se-logo-main{
-    width: $logo-main-size-portrait;
+  .se-logo-main {
+    width: $logo-main-size-portrait * 1.2;
   }
 
   .index-nav-wrap {
-    max-width: $logo-main-size-portrait * 1.2;
+    max-width: $logo-main-size-portrait * 1.6;
   }
 
   .index-destination-row1 {
@@ -124,5 +147,40 @@ $destination-block-border: 3px solid white;
   .index-destination-row3b {
     font-size: 4vw;
     line-height: 4vw;
+  }
+
+  .index-callword {
+    font-size: 4.2vw;
+    line-height: 7vw;
+    top: 1vw;
+    &.offset {
+      left: -1vw;
+    }
+  }
+}
+
+.index-nav {
+  @include text-shadow(0,0,40px,0,0,0,1);
+  margin: 0;
+  padding: 0;
+  li {
+    &:before, &:after {
+      content: '\2022';
+      margin: 0.5rem;
+    }
+    font-size: 1.4rem;
+    line-height: 2rem;
+    display: block;
+    @media screen and (min-width: $mobile-threshold-width) {
+      display: inline-block;
+      font-size: 1.3rem;
+      &:before {
+        margin: 0.5rem 0.5rem 0.5rem 0.3rem;
+      }
+      &:first-child:before, &:after {
+        content: '';
+        margin: 0;
+      }
+    }
   }
 }
