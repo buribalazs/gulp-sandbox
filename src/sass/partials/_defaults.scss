@@ -1,12 +1,26 @@
 @import '_variables';
 @import '_fonts';
+@import '_animations';
 
-.preload * {
-  -webkit-animation: none !important;
-  -moz-animation: none !important;
-  -o-animation: none !important;
-  animation: none !important;
-  opacity: 0;
+.preload {
+  &:before{
+    content:'\25DC';
+    font-size: 64px;
+    line-height: 0;
+    position: absolute;
+    margin-left: -32px;
+    margin-top: -32px;
+    left: 50%;
+    top: 50%;
+    @include animation(spin 2s infinite linear);
+  }
+  * {
+    -webkit-animation: none !important;
+    -moz-animation: none !important;
+    -o-animation: none !important;
+    animation: none !important;
+    opacity: 0;
+  }
 }
 
 * {
@@ -29,8 +43,8 @@ body {
 }
 
 .clearfix::after {
-  content:".";
-  clear:both;
+  content: ".";
+  clear: both;
   visibility: hidden;
 }
 

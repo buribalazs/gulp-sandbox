@@ -16,6 +16,7 @@ $destination-block-border: 3px solid white;
 
 .se-logo-main {
   width: $logo-main-size;
+  @include animation(fall-in 1s);
 }
 
 .index-nav-wrap {
@@ -33,6 +34,7 @@ $destination-block-border: 3px solid white;
 }
 
 .index-destination-block-content {
+  cursor: pointer;
   position: relative;
   margin: 0 0.7rem;
   padding: 0.7rem 0;
@@ -50,6 +52,16 @@ $destination-block-border: 3px solid white;
   position: absolute;
   left: -10%;
   top: 95%
+}
+
+.index-destination-block-container:hover{
+  .index-destination-block-content {
+    @include scale(1.05,1.05)
+  }
+  .index-left-arrow, .index-right-arrow{
+    @include scale(1.15,1.15)
+  }
+
 }
 
 .index-right-arrow {
@@ -159,27 +171,30 @@ $destination-block-border: 3px solid white;
   }
 }
 
-.index-nav {
-  @include text-shadow(0,0,40px,0,0,0,1);
-  margin: 0;
-  padding: 0;
-  li {
-    &:before, &:after {
-      content: '\2022';
-      margin: 0.5rem;
-    }
-    font-size: 1.4rem;
-    line-height: 2rem;
-    display: block;
-    @media screen and (min-width: $mobile-threshold-width) {
-      display: inline-block;
-      font-size: 1.3rem;
-      &:before {
-        margin: 0.5rem 0.5rem 0.5rem 0.3rem;
+.index-nav-container {
+  @include animation(rise-up 1s);
+  .index-nav {
+    @include text-shadow(0, 0, 40px, 0, 0, 0, 1);
+    margin: 0;
+    padding: 0;
+    li {
+      &:before, &:after {
+        content: '\2022';
+        margin: 0.5rem;
       }
-      &:first-child:before, &:after {
-        content: '';
-        margin: 0;
+      font-size: 1.4rem;
+      line-height: 2rem;
+      display: block;
+      @media screen and (min-width: $mobile-threshold-width) {
+        display: inline-block;
+        font-size: 1.3rem;
+        &:before {
+          margin: 0.5rem 0.5rem 0.5rem 0.3rem;
+        }
+        &:first-child:before, &:after {
+          content: '';
+          margin: 0;
+        }
       }
     }
   }

@@ -1,30 +1,77 @@
-@mixin animation($name, $duration){
-  -webkit-animation: $name $duration; 
-  -moz-animation: $name $duration; 
-  -o-animation: $name $duration;
-  animation: $name $duration;
+@import '_mixins';
+
+.trans-all {
+  @include transition(all 0.5s);
 }
 
-@mixin keyframes($animationName) {
-  @-webkit-keyframes #{$animationName} {
-    @content;
+.fadein {
+  @include animation(fadein 0.4s);
+}
+
+@include keyframes(fadein) {
+  from {
+    opacity: 0;
   }
-  @-moz-keyframes #{$animationName} {
-    @content;
-  }
-  @-o-keyframes #{$animationName} {
-    @content;
-  }
-  @keyframes #{$animationName} {
-    @content;
+  to {
+    opacity: 1;
   }
 }
 
-.fadein{
-  @include animation(fadein,0.4s);
+.spin {
+  @include animation(spin 2s infinite linear);
 }
 
-@include keyframes(fadein){
-  from { opacity: 0; }
-  to   { opacity: 1; }
+@include keyframes(spin) {
+  from {
+    @include transform(rotate(0deg));
+  }
+  to {
+    @include transform(rotate(360deg));
+  }
+}
+
+//-----------------------recipes
+$recipe-translate: 50px;
+@include keyframes(fall-in) {
+  from {
+    @include translate(0, -$recipe-translate);
+  }
+  to {
+    @include translate(0, 0);
+  }
+}
+
+@include keyframes(rise-up) {
+  from {
+    @include translate(0, $recipe-translate);
+  }
+  to {
+    @include translate(0, 0);
+  }
+}
+
+.anim-from-left{
+  @include animation(from-left 1s);
+}
+
+@include keyframes(from-left) {
+  from {
+    @include translate(-$recipe-translate, 0);
+  }
+  to {
+    @include translate(0, 0);
+  }
+}
+
+.anim-from-right{
+  @include animation(from-right 1s);
+}
+
+@include keyframes(from-right) {
+  from {
+    @include translate($recipe-translate, 0);
+  }
+  to {
+    @include translate(0, 0);
+  }
 }
