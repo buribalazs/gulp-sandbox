@@ -1,3 +1,14 @@
 .stamp-header {
+  color: black;
   text-transform: uppercase;
+  span {
+    display: inline-block;
+    margin-right: 1rem;
+    overflow: hidden;
+    b {
+      background: white;
+      padding: 0.2rem;
+      margin: 0.2rem;
+    }
+  }
 }
