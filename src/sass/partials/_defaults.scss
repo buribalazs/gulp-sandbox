@@ -42,9 +42,14 @@ body {
   text-transform: uppercase;
 }
 
-.clearfix::after {
+@mixin clearfix {
+  &::after{
   content: ".";
   clear: both;
   visibility: hidden;
+  }
+}
+.clearfix {
+  @include clearfix;
 }
 
