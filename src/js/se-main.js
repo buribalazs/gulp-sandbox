@@ -15,6 +15,7 @@ $(function () {
         return html.map(function(d){
             return d.indexOf(',') === -1 ? '<span>' + d + '</span>' : '<span class="comma">' + d + '</span>';
         }).join('');
-
     });
+
+    $(".item-slide ul").itemslide();
 });
