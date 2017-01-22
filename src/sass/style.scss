@@ -1,8 +1,13 @@
-@import "partials/_variables";
+@import "partials/_common";
 @import "partials/_defaults";
-@import "partials/_layout";
 @import "partials/_backgrounds";
 @import "partials/_fonts";
+@import "partials/_layout";
+@import "partials/_animations";
 
 @import "partials/specifics/_index-page.scss";
 @import "partials/specifics/_menu.scss";
+
+body {
+  @include translate(0.2px,0.2px);
+}

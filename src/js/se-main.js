@@ -3,7 +3,7 @@ $(window).on('load', function () {
 });
 
 $(function () {
-    $('.stamp-header').html(function () {
+    $('.stamp-label').html(function () {
         var selector = $(this);
         var html = selector.text().split(' ');
         html.forEach(function(d,i){
@@ -13,7 +13,7 @@ $(function () {
             }).join('');
         });
         return html.map(function(d){
-            return '<span>' + d + '</span>';
+            return d.indexOf(',') === -1 ? '<span>' + d + '</span>' : '<span class="comma">' + d + '</span>';
         }).join('');
 
     });

@@ -1,14 +1,37 @@
-@import '_variables';
+@import '_common';
 
 .content-wrap {
   max-width: $max-content-width;
+  overflow: hidden;
   margin: 0 auto;
-  padding: 3rem;
+  padding: 1.5rem;
 }
 
 .text-center {
   text-align: center;
 }
 
+.row {
+  @include clearfix;
+}
 
+.col-md-6 {
+  float: left;
+  width: 100%;
+  @media screen and (min-width: $mobile-threshold-width) {
+    width: 50%;
+  }
+}
+
+.flex-row {
+  display: flex;
+  div {
+    flex:  1 1;
+    flex-basis: auto;
+    white-space: nowrap;
+  }
+  .fixed {
+    flex: 0 0;
+  }
+}
 

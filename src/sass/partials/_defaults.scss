@@ -1,10 +1,8 @@
-@import '_variables';
-@import '_fonts';
-@import '_animations';
+@import '_common';
 
 .preload {
-  &:before{
-    content:'\25DC';
+  &:before {
+    content: '\25DC';
     font-size: 64px;
     line-height: 0;
     position: absolute;
@@ -40,16 +38,5 @@ body {
 
 .uppercase {
   text-transform: uppercase;
-}
-
-@mixin clearfix {
-  &::after{
-  content: ".";
-  clear: both;
-  visibility: hidden;
-  }
-}
-.clearfix {
-  @include clearfix;
 }
 

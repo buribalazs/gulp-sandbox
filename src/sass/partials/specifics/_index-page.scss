@@ -1,8 +1,4 @@
-@import '../_layout';
-@import '../_backgrounds';
-@import '../_variables';
-@import '../_mixins';
-@import '../_animations';
+@import '../_common';
 
 $logo-main-size: 45%;
 $logo-main-size-portrait: 65%;
@@ -20,7 +16,8 @@ $destination-block-border: 3px solid white;
 }
 
 .index-nav-wrap {
-  @extend .content-wrap;
+  overflow: visible;
+  margin: 0 auto;
   padding: 2rem 0;
   @media screen and (min-width: $max-content-width) {
     padding: 4rem 0 5rem 0;

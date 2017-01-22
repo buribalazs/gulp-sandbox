@@ -53,3 +53,15 @@
 @mixin text-shadow($x, $y, $blur, $r, $g, $b, $alpha) {
   text-shadow: $x $y $blur rgba($r, $g, $b, $alpha);
 }
+
+
+@mixin clearfix {
+  &::after {
+    content: ".";
+    overflow: hidden;
+    height: 0;
+    display: block;
+    clear: both;
+    visibility: hidden;
+  }
+}

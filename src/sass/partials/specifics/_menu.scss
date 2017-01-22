@@ -1,14 +1,75 @@
-.stamp-header {
+@import '../_common';
+
+.menu-container {
+  overflow: auto;
+  background-image: (url("../img/bg/paper-texture.png"));
+}
+
+.menu-wrap {
+  max-width: $max-content-width * 1.4;
+}
+
+.menu-item {
+  margin-bottom: 0.7rem;
+  vertical-align: middle;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: black;
+  .menu-item-name {
+    flex: 0 1;
+    label {
+      white-space: nowrap;
+    }
+  }
+  .line {
+    flex: 1 0;
+    position: relative;
+    margin: 0.6em 0.7em 0 0.7em;
+    border-top: 1px solid black;
+    height: 0;
+    &.dotted {
+      border-top: 2px dotted black;
+    }
+    &::before {
+      content: 'I';
+      position: absolute;
+      left: -0.23em;
+      top: -0.62em;
+    }
+    &::after {
+      position: absolute;
+      right: -0.3em;
+      top: -0.75em;
+      content: '\25B6';
+    }
+  }
+}
+
+sub {
+  display: block;
+  vertical-align: baseline;
+  font-weight: 400;
+  font-size: 0.8em;
+}
+
+.stamp-label {
   color: black;
   text-transform: uppercase;
   span {
     display: inline-block;
-    margin-right: 1rem;
+    margin-right: 0.4em;
     overflow: hidden;
+    &.comma {
+      margin-right: 0;
+    }
     b {
+      @include scale($font-narrow-scale, 1);
+      @include box-shadow(-0.1em, 0.06em, 0.1em, 0, 0, 0, 0, 0.4);
+      display: inline-block;
       background: white;
-      padding: 0.2rem;
-      margin: 0.2rem;
+      width: 1em;
+      margin: 0 -0.1em 0.1em 0;
+      padding: 0.03em 0 0 0.1em;
     }
   }
 }
