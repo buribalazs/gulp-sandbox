@@ -19,5 +19,10 @@
     }
   }
 
+  &.large li{
+    @extend .bg;
+    min-height: 90vh;
+  }
+
 }
 
