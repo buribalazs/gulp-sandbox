@@ -17,9 +17,15 @@ $(function () {
         }).join('');
     });
 
-    var resizeTimer;
-    $(window).resize(function () {
+    var resizeTimer, windowWidth = -1000, windowHeight = -1000, WINDOW = $(window), RESIZE_TRESHOLD = 70;
+    WINDOW.resize(function () {
         clearTimeout(resizeTimer);
+        if (Math.abs(WINDOW.width() - windowWidth) < RESIZE_TRESHOLD || Math.abs(WINDOW.height() - windowHeight) < RESIZE_TRESHOLD) {
+            return;
+        }
+        console.log('resize');
+        windowWidth = WINDOW.width();
+        windowHeight = WINDOW.height();
         resizeTimer = setTimeout(function () {
 
             $('.menu-item').each(function () {
@@ -40,9 +46,23 @@ $(function () {
             $(".item-slide").each(function () {
                 var container = $(this);
                 var slider = container.find('ul');
+                var sliderReload = slider.data('reload');
+                if (sliderReload) {
+                    sliderReload();
+                    return;
+                }
+
                 var lastIndex = slider.find('li').length - 1;
                 lastIndex = lastIndex >= 0 ? lastIndex : 0;
-                slider.itemslide({one_item: true});
+                slider.itemslide(
+                    {
+                        one_item: true,
+                        disable_clicktoslide: true
+                    }
+                );
+
+                slider.data('reload', slider.reload);
+
                 var left = container.find('.left-caret').click(slider.previous);
                 var right = container.find('.right-caret').click(slider.next);
                 slider.on('changeActiveIndex', function (e) {
@@ -51,12 +71,10 @@ $(function () {
                     left.toggleClass('available', i > 0);
                     right.toggleClass('available', i < lastIndex);
                 });
-                
-                slider.on('pan', function(){
-                    console.log('pan');
-                });
-
             });
+
+            $('.full-bg').height(windowHeight);
+            $('.large').height(windowHeight * 0.9);
 
         }, resizeTimer === undefined ? 0 : 250);
     }).resize();

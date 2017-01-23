@@ -4,23 +4,27 @@
   overflow: hidden;
   position: relative;
   width: 100%;
+  height: 100px;
   ul {
     display: block;
     margin: 0;
     padding: 0;
     list-style-type: none;
-    position: relative;
+    position: absolute;
     height: 100%;
     -webkit-transform-style: preserve-3d;
     transform-style: preserve-3d;
     li {
       width: 100vw;
+      height: 100%;
       float: left;
     }
   }
 
-  &.large li {
-    @extend .bg;
+  &.large {
+    li {
+      @extend .bg;
+    }
     min-height: 90vh;
   }
 
