@@ -12,12 +12,14 @@
 }
 
 .row {
+  margin: 0 -1rem;
   @include clearfix;
 }
 
 .col-md-6 {
   float: left;
   width: 100%;
+    padding: 0 1rem;
   @media screen and (min-width: $mobile-threshold-width) {
     width: 50%;
   }

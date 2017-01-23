@@ -8,7 +8,3 @@
 
 @import "partials/specifics/_index-page.scss";
 @import "partials/specifics/_menu.scss";
-
-body {
-  @include translate(0.2px,0.2px);
-}
