@@ -24,3 +24,10 @@ $heavy-weight: 700;
   }
 }
 
+.left-caret::after{
+  content: '\2039';
+}
+
+.right-caret::after{
+  content: '\203a';
+}

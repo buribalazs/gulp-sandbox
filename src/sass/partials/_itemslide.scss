@@ -19,9 +19,48 @@
     }
   }
 
-  &.large li{
+  &.large li {
     @extend .bg;
     min-height: 90vh;
+  }
+
+  &.dirty {
+    @media screen and (orientation: portrait) {
+      .left-caret, .right-caret {
+        opacity: 0 !important;
+      }
+    }
+  }
+
+  .left-caret, .right-caret {
+    opacity: 0.3;
+    position: absolute;
+    font-size: 5.5rem;
+    width: 4rem;
+    height: 4rem;
+    line-height: 3rem;
+    text-align: center;
+    border-radius: 50%;
+    top: 45%;
+    background: rgba(0, 0, 0, 0.4);
+    @media screen and (orientation: portrait) {
+      top: auto;
+      bottom: 1rem;
+    }
+    &:hover {
+      background: rgba(0, 0, 0, 0.8);
+    }
+    &.available {
+      opacity: 1;
+    }
+  }
+
+  .left-caret {
+    left: 1rem;
+  }
+
+  .right-caret {
+    right: 1rem;
   }
 
 }

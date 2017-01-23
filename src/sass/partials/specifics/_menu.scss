@@ -64,6 +64,7 @@ sub {
       margin-right: 0;
     }
     b {
+      text-align: left;
       @include scale($font-narrow-scale, 1);
       @include box-shadow(-0.1em, 0.06em, 0.1em, 0, 0, 0, 0, 0.4);
       display: inline-block;
