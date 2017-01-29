@@ -75,6 +75,10 @@ $(function () {
         $('.large').height(windowHeight * 0.9);
 
     }).resize();
+    
+    $('.map-cover').bind('mousewheel', function (e) {
+        console.log('asd');
+    });
 
     //
 

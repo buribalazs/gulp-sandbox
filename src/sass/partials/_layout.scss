@@ -11,24 +11,38 @@
   text-align: center;
 }
 
+.text-right {
+  text-align: right;
+}
+
 .row {
   margin: 0 -1rem;
   @include clearfix;
 }
 
+.col-md-12 {
+  float: left;
+  width: 100%;
+  padding: 0 1rem;
+}
+
 .col-md-6 {
   float: left;
   width: 100%;
-    padding: 0 1rem;
+  padding: 0 1rem;
   @media screen and (min-width: $mobile-threshold-width) {
     width: 50%;
   }
 }
 
+.fill-height {
+  height: 100%;
+}
+
 .flex-row {
   display: flex;
   div {
-    flex:  1 1;
+    flex: 1 1;
     flex-basis: auto;
     white-space: nowrap;
   }

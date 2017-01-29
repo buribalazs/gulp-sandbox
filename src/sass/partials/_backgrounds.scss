@@ -10,3 +10,8 @@
   @extend .bg;
   min-height: 100vh;
 }
+
+.chalkboard {
+  overflow: hidden;
+  background: darkgray url('../img/bg/chalkboard.png');
+}

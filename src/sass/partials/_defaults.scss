@@ -36,7 +36,20 @@ body {
   padding: 0;
 }
 
+iframe {
+  border: 0;
+}
+
 .uppercase {
   text-transform: uppercase;
+}
+
+$top-logo-scale: 15rem;
+.top-logo {
+  margin: $top-logo-scale/8 auto;
+  background: url('../img/logo-lg.png') no-repeat center center;
+  background-size: $top-logo-scale;
+  width: $top-logo-scale;
+  height: $top-logo-scale;
 }
 

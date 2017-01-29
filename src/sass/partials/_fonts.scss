@@ -1,11 +1,6 @@
 @import "_mixins";
 @import "_variables";
 
-$serif-font: 'Noto Serif', serif;
-$sans-serif-font: 'Asap', sans-serif;
-$light-weight: 400;
-$heavy-weight: 700;
-
 .serif-heavy {
   font-family: $serif-font;
   font-weight: $heavy-weight;
@@ -20,14 +15,21 @@ $heavy-weight: 700;
   font-family: $sans-serif-font;
   font-weight: $heavy-weight;
   &.wide {
-    @include scale($font-wide-scale,1);
+    @include scale($font-wide-scale, 1);
   }
 }
 
-.left-caret::after{
+.text-huge {
+  font-size: 2.2rem;
+  @media screen and (min-width: $mobile-threshold-width) {
+    font-size: 3rem;
+  }
+}
+
+.left-caret::after {
   content: '\2039';
 }
 
-.right-caret::after{
+.right-caret::after {
   content: '\203a';
 }
