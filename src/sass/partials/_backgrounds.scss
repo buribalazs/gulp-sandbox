@@ -1,5 +1,5 @@
 .bg {
-  background: no-repeat center center ;
+  background: no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -14,4 +14,9 @@
 .chalkboard {
   overflow: hidden;
   background: darkgray url('../img/bg/chalkboard.png');
+}
+
+.whitewall {
+  overflow: hidden;
+  background: darkgray url('../img/bg/whitewall.png');
 }

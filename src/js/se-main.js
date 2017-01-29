@@ -19,7 +19,7 @@ $(function () {
 
     var windowWidth = -1000, windowHeight = -1000, WINDOW = $(window), RESIZE_TRESHOLD = 70;
     WINDOW.resize(function () {
-        if (Math.abs(WINDOW.width() - windowWidth) < RESIZE_TRESHOLD || Math.abs(WINDOW.height() - windowHeight) < RESIZE_TRESHOLD) {
+        if (Math.abs(WINDOW.width() - windowWidth) < RESIZE_TRESHOLD && Math.abs(WINDOW.height() - windowHeight) < RESIZE_TRESHOLD) {
             return;
         }
         console.log('resize');
