@@ -22,7 +22,6 @@ $(function () {
         if (Math.abs(WINDOW.width() - windowWidth) < RESIZE_TRESHOLD && Math.abs(WINDOW.height() - windowHeight) < RESIZE_TRESHOLD) {
             return;
         }
-        console.log('resize');
         windowWidth = WINDOW.width();
         windowHeight = WINDOW.height();
 
@@ -79,6 +78,35 @@ $(function () {
     $('.map-cover').bind('mousewheel', function (e) {
         console.log('asd');
     });
+
+    $('a[href*="#"]:not([href="#"])').click(function() {
+        if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+            var target = $(this.hash);
+            target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+            if (target.length) {
+                var delta = Math.abs(target.offset().top - ($('html').scrollTop() || $('body').scrollTop())) * 0.2;
+                toggleMenu(false);
+                $('html, body').animate({
+                    scrollTop: target.offset().top
+                }, 500 + delta);
+                return false;
+            }
+        }
+    });
+    
+    var nav = $('.se-nav'), menuOpen = false;
+    $('.se-nav .nav-icon').click(function () {
+        toggleMenu();
+    });
+
+    function toggleMenu(open){
+        if (open === undefined){
+            menuOpen = !menuOpen;
+        }else{
+            menuOpen = open;
+        }
+        nav.toggleClass('nav-open', open);
+    }
 
     //
 

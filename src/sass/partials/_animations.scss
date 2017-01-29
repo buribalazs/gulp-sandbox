@@ -4,6 +4,10 @@
   @include transition(all 0.5s);
 }
 
+.trans-short {
+  @include transition(all 0.2s);
+}
+
 .fadein {
   @include animation(fadein 0.4s);
 }

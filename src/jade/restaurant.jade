@@ -2,37 +2,40 @@ doctype html
 html.sans-serif-light
     include includes/head.jade
     body.preload
-        .chalkboard.text-center
-            .top-logo
-            h1.stamp-label.on-chalk.text-huge bartók b. út
-        .item-slide.large
-            ul
-                li(style='background-image: url("img/location/lajos/interior/01.jpg")')
-                li(style='background-image: url("img/location/lajos/interior/02.jpg")')
-                li(style='background-image: url("img/location/lajos/interior/03.jpg")')
-            .left-caret.trans-all
-            .right-caret.trans-all.available
-        .menu-container
-            include includes/menu.jade
-        .item-slide.large
-            ul
-                li(style='background-image: url("img/location/lajos/food/01.jpg")')
-                    .item-text
-                        h1 Jó kaja menü ruccolával és spenótos bullshot mártással
-                        br
-                        h2 2300.-
-                li(style='background-image: url("img/location/lajos/food/02.jpg")')
-                    .item-text
-                        h1 Steak lehúzós st'y'lusban
-                        br
-                        h2 12300.-
-                li(style='background-image: url("img/location/lajos/food/03.jpg")')
-                    .item-text
-                        h1 Elképesztő szemenszedett lopás
-                        br
-                        h2 233300.-
-            .left-caret.trans-all
-            .right-caret.trans-all.available
-        .whitewall
-            include includes/menu.jade
-    include includes/map.jade
+        .fadein
+            .chalkboard.text-center
+                .top-logo
+                h1.stamp-label.on-chalk.text-huge bartók b. út
+                include includes/nav.jade
+            #gallery.item-slide.large
+                ul
+                    li(style='background-image: url("img/location/lajos/interior/01.jpg")')
+                    li(style='background-image: url("img/location/lajos/interior/02.jpg")')
+                    li(style='background-image: url("img/location/lajos/interior/03.jpg")')
+                .left-caret.trans-all
+                .right-caret.trans-all.available
+            #menu.menu-container
+                include includes/menu.jade
+            #extra-food.item-slide.large
+                ul
+                    li(style='background-image: url("img/location/lajos/food/01.jpg")')
+                        .item-text
+                            h1 Jó kaja menü ruccolával és spenótos bullshot mártással
+                            br
+                            h2 2300.-
+                    li(style='background-image: url("img/location/lajos/food/02.jpg")')
+                        .item-text
+                            h1 Steak lehúzós st'y'lusban
+                            br
+                            h2 12300.-
+                    li(style='background-image: url("img/location/lajos/food/03.jpg")')
+                        .item-text
+                            h1 Elképesztő szemenszedett lopás
+                            br
+                            h2 233300.-
+                .left-caret.trans-all
+                .right-caret.trans-all.available
+            #extra-menu.whitewall
+                include includes/menu.jade
+            #contact
+                include includes/map.jade

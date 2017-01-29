@@ -1,0 +1,80 @@
+@import "_common";
+
+.se-nav {
+  //@include transition(all 0.2s);
+  display: inline-block;
+  position: fixed;
+  margin: 0;
+  right: 0;
+  top: 0;
+  text-align: right;
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: 2rem;
+  z-index: 20;
+  width: 100%;
+
+  &.nav-open {
+    background: black;
+    ul {
+      display: inherit;
+      max-height: 500px;
+    }
+  }
+
+  .nav-icon {
+    display: inline-block;
+    margin: 0;
+    font-size: 2rem;
+    line-height: 3rem;
+    cursor: pointer;
+    &:before {
+      position: relative;
+      top: 0.8rem;
+      right: 1.8rem;
+      content: '\2630';
+      font-weight: 900;
+    }
+  }
+
+  ul {
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+  }
+  a {
+    color: white;
+    text-decoration: none;
+  }
+  li {
+    padding: 0;
+    margin: 1rem 2rem;
+    display: block;
+  }
+  //☰
+}
+
+@media screen and (min-width: $mobile-threshold-width) {
+  .se-nav {
+    position: static;
+    text-align: center;
+    margin: 0 auto;
+    font-size: 1.5rem;
+    &.nav-open {
+      background: none;
+    }
+
+    .nav-icon {
+      display: none;
+    }
+    ul {
+      margin: 0;
+      max-height: none;
+      display: inherit;
+    }
+    li {
+      margin: 1rem;
+      display: inline-block;
+    }
+  }
+}
